@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Our Tangled Love 🏮</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="disney-body">
+
+<!-- MUSIC -->
+<audio autoplay loop>
+<source src="tangled.mp3" type="audio/mpeg">
+</audio>
+
+<!-- STARS -->
+<div class="stars"></div>
+
+<!-- HERO -->
+<section class="scene hero-scene">
+<h1 class="glow-title">🏮 Our Love Story</h1>
+<p class="hero-text">
+Some souls don’t meet by accident.  
+They recognize each other.
+</p>
+</section>
+
+<!-- PHOTO -->
+<section class="scene photo-scene">
+<div class="photo-frame">
+<img src="ourphoto.jpg">
+</div>
+<p class="caption">
+Out of every face in the world,  
+my heart chose yours 💖
+</p>
+</section>
+
+<!-- COUNTER SCENE -->
+<section class="scene counter-scene">
+
+<div id="days" class="day-counter"></div>
+
+<p class="counter-text">
+Wow… see? So many days we’ve been together, Eugene 🥹💖🏮✨  
+Way to go, us! 💫💜
+</p>
+
+<div id="liveClock"></div>
+<div id="anniversary"></div>
+
+</section>
+
+<!-- LETTER -->
+<section class="scene letter-scene">
+<h2>💌 My Heart</h2>
+<p class="magic-text">
+I didn’t fall in love with you in a moment.  
+I fell in love with you in thousands of small ones.  
+
+In your silence.  
+In your laughter.  
+In your presence.  
+In your absence.  
+
+You are not my habit.  
+You are my home.  
+
+If love is a journey —  
+I don’t want a destination.  
+I just want the road,  
+as long as you’re walking it with me.
+ Babie, You are what I've always prayed from God, I know our fate, it's intertwined, and I'm glad that you chose me, out of all of em. We'll be happy forever and I love you the most. Somedays are gloomy, some are raining, some are sunny,but every time I just know my constant, YOU<3🏮✨
+</p>
+</section>
+
+</section>
+
+
+<!-- PROMISE -->
+<section class="scene promise-scene">
+<h2>✨ My Promise</h2>
+<p class="promise-text">
+I will choose you when it’s easy.  
+I will choose you when it’s hard.  
+I will choose you when I’m tired.  
+I will choose you when I’m scared.  
+
+Not because I need you —  
+but because I want you, I will forever choose you, infront of the whole crowd.
+Whoever questioned us, make us believe we're not meant to be together. They will see the day I will claim you as mine, for forever. You are my hope, like Eugene, he rescued her from her isolation, you did it too.  
+
+In every version of life,  
+you are my constant. 🏮💜
+</p>
+</section>
+
+<!-- FINAL -->
+<section class="scene final-scene">
+<h1 class="final-glow">🌌 My Forever</h1>
+<p class="final-poem">
+If the universe asked me  
+what love looks like —  
+I would show them you.  
+
+If time asked me  
+what forever means —  
+I would say your name.  
+
+And if destiny asked me  
+who I belong to —  
+I would answer without fear,  
+
+You. 🏮✨  
+Always.  
+Every lifetime.  
+Every world.  
+Every reality. 
+You again made me believe that love exists, and I'm forever grateful that you're mine.
+My Flynn Rider, you are safe with me the way Eugene was safe with his secrets with Rupanzel. I'll be your forever diary. And like Rupanzel, I'll heal your inner child from everything bad happened to you. 
+Just promise me, You'll be here, FOREVER??? 
+</p>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+const startDate = new Date("2024-09-18T00:00:00");
+
+function updateLove(){
+const now = new Date();
+
+/* ACCURATE MONTHS + DAYS */
+let years = now.getFullYear() - startDate.getFullYear();
+let months = now.getMonth() - startDate.getMonth();
+let days = now.getDate() - startDate.getDate();
+
+if(days < 0){
+months--;
+const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+days += prevMonth.getDate();
+}
+
+if(months < 0){
+years--;
+months += 12;
+}
+
+let totalMonths = years * 12 + months;
+
+document.getElementById("days").innerText =
+totalMonths + " months & " + days + " days";
+
+/* LIVE CLOCK (REAL TIME) */
+let diff = now - startDate;
+let totalSeconds = Math.floor(diff / 1000);
+
+let seconds = totalSeconds % 60;
+let minutes = Math.floor(totalSeconds / 60) % 60;
+let hours = Math.floor(totalSeconds / 3600) % 24;
+
+document.getElementById("liveClock").innerText =
+"⏰ " + totalMonths + " months, " + days + " days, " +
+hours + "h " + minutes + "m " + seconds + "s together 💖";
+
+/* ANNIVERSARY */
+let nextAnniversary = new Date(
+now.getFullYear(),
+startDate.getMonth(),
+startDate.getDate()
+);
+
+if(nextAnniversary < now){
+nextAnniversary.setFullYear(now.getFullYear() + 1);
+}
+
+let diffAnn = nextAnniversary - now;
+let annDays = Math.ceil(diffAnn / (1000*60*60*24));
+
+document.getElementById("anniversary").innerText =
+"🎉 Next anniversary in " + annDays + " days 🏮✨";
+}
+
+setInterval(updateLove,1000);
+updateLove();
+
+});
+</script>
+
+</body>
+</html>

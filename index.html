@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Our Tangled Love 🏮</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="intro-body">
+
+<div class="intro-container">
+
+<h1 class="intro-title">🏮 A Love Written in Lantern Light ✨</h1>
+
+<p class="intro-sub">
+Every lantern in the sky carries a wish…  
+Tonight, this one carries my heart ✨
+</p>
+
+<div class="lock-box">
+<p class="hint">🔐 Enter the day our story began</p>
+
+<input type="password" id="pass" placeholder="DDMMYYYY">
+
+<button onclick="unlock()">Unlock Our Story 🏮✨</button>
+</div>
+
+<p class="small-note">
+Hint: The day our eyes first met 🏮✨
+</p>
+
+</div>
+
+<script>
+function unlock(){
+let p = document.getElementById("pass").value;
+let box = document.querySelector(".intro-container");
+
+if(p === "13092024"){   // 🔁 PUT YOUR REAL DATE HERE
+box.classList.add("success");
+
+setTimeout(()=>{
+window.location.href = "love.html";
+},1800);
+
+}else{
+box.classList.add("error");
+setTimeout(()=>{
+box.classList.remove("error");
+},600);
+
+alert("Not yet, my love... try again 🏮✨");
+}
+}
+</script>
+
+</body>
+</html>
